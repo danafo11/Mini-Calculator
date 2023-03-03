@@ -48,14 +48,19 @@
         align-items: center;
         margin-left: 48%;
         padding: 5px 20px;
-        color: wheat;
         font-weight: 500;
     }
 </style>
 <body>
     <div class="container col-sm-5 col-lg-12">
-        <input type="text" placeholder="Enter your first number" id="firstValue">
-        <input type="text" placeholder="Enter your Second number" id="secondValue">
+        <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="First value" aria-label="First value" id="firstValue">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Second value" aria-label="Second value" id="secondValue">
+            </div>
+          </div>
     </div>
     <br>
     <div id="calculator"></div><br>
@@ -73,9 +78,17 @@
             var secondValue = document.getElementById("secondValue").value;
             var answer = firstValue * secondValue;
             // alert(firstValue * secondValue)
-            calculator.innerHTML = answer;
-            calculator.style.backgroundColor = "blue";
-            calculator.style.width = "50px";
+            if (firstValue == "" || secondValue == "") {
+                // alert("Please fill the fields correctly")
+                var error = "Please fill the fields correctly";
+                calculator.innerHTML = error;
+                error.style.color = "red";
+            } else {
+                calculator.innerHTML = answer;
+                calculator.style.width = "50px";
+                calculator.style.color = "blue"
+            }
+            
         }
 
         function divide() {
@@ -84,9 +97,15 @@
             var secondValue = document.getElementById("secondValue").value;
             // alert(firstValue / secondValue);
             var answer = firstValue / secondValue;
-            calculator.innerHTML = answer;
-            calculator.style.backgroundColor = "blue";
-            calculator.style.width = "50px";
+            if (firstValue == "" || secondValue == "") {
+                // alert("Please fill the fields correctly")
+                var error = "Please fill the fields correctly";
+                calculator.innerHTML = error;
+            } else {
+                calculator.innerHTML = answer;
+                calculator.style.width = "50px";
+                calculator.style.color = "blue";
+            }
         }
 
         function subtract() {
@@ -95,9 +114,15 @@
             var secondValue = document.getElementById("secondValue").value;
             // alert(firstValue - secondValue);
             var answer = firstValue - secondValue;
-            calculator.innerHTML = answer;
-            calculator.style.backgroundColor = "blue";
-            calculator.style.width = "50px";
+            if (firstValue == "" || secondValue == "") {
+                // alert("Please fill the fields correctly")
+                var error = "Please fill the fields correctly";
+                calculator.innerHTML = error;
+            } else {
+                calculator.innerHTML = answer;
+                calculator.style.width = "50px";
+                calculator.style.color = "blue";
+            }
         }
 
         function add() {
@@ -106,9 +131,15 @@
             var secondValue = document.getElementById("secondValue").value;
             // alert("I am " + firstValue + " and my rating is " + secondValue);
             var answer = parseInt(firstValue) + parseInt(secondValue);
-            calculator.innerHTML = answer;
-            calculator.style.backgroundColor = "blue";
-            calculator.style.width = "50px";
+            if (firstValue == "" || secondValue == "") {
+                // alert("Please fill the fields correctly")
+                var error = "Please fill the fields correctly";
+                calculator.innerHTML = error;
+            } else {
+                calculator.innerHTML = answer;
+                calculator.style.width = "50px";
+                calculator.style.color = "blue";
+            }
         }
     </script>
 </body>
